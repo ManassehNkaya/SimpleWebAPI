@@ -29,12 +29,12 @@ steps:
 - script: dotnet test --no-build --verbosity normal
   displayName: 'Run tests'
 
-- script: md "$(Build.ArtifactStagingDirectory)/wiki"
+- script: mkdir -p "$(Build.ArtifactStagingDirectory)/wiki"
   displayName: 'Create wiki directory'
 
 - task: XplatGenerateReleaseNotes@4
   inputs:
-    outputfile: '$(Build.ArtifactStagingDirectory)\wiki\releasenotes.md'
+    outputfile: '$(Build.ArtifactStagingDirectory)\wiki\releasenotes.mkdir'
     templateLocation: 'InLine'
     inlinetemplate: |
       ## Build {{buildDetails.buildNumber}}
