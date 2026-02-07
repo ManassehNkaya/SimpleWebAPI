@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  name: "KodeKloudCustomer"
+
 
 steps:
 - task: UseDotNet@2
